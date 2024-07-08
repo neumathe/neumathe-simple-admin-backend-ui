@@ -114,6 +114,7 @@ export const formSchema: FormSchema[] = [
     field: 'dataScope',
     label: t('sys.role.dataScope'),
     component: 'Select',
+    required: true,
     componentProps: {
       options: [
         { label: t('sys.role.dataPermAll'), value: 1 },
