@@ -13,6 +13,8 @@ export interface RoleInfo {
   defaultRouter?: string;
   remark?: string;
   sort?: number;
+  dataScope?: number;
+  customDeptIds?: number[];
 }
 
 /**

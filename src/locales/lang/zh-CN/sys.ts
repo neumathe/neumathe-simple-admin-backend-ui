@@ -160,6 +160,13 @@ export default {
     stuff: '员工',
     seller: '销售',
     member: '会员',
+    dataScope: '数据权限',
+    dataPermAll: '所有数据',
+    dataPermCustomDept: '自定义部门数据',
+    dataPermOwnDeptAndSub: '用户所在部门及子部门数据',
+    dataPermOwnDept: '用户所在部门数据',
+    dataPermSelf: '用户本人数据',
+    customDept: '自定义部门',
     // action
     addRole: '新增角色',
     editRole: '编辑角色',

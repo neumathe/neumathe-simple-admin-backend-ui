@@ -1,5 +1,5 @@
 import { BasicColumn, FormSchema } from '@/components/Table';
-import { h } from 'vue';
+import { computed, h, ref } from 'vue';
 import { Switch } from 'ant-design-vue';
 import { useMessage } from '@/hooks/web/useMessage';
 import { useI18n } from '@/hooks/web/useI18n';
@@ -9,6 +9,7 @@ import { ApiAuthorityInfo } from '@/api/sys/model/authorityModel';
 import { formatToDateTime } from '@/utils/dateUtil';
 import { updateRole } from '@/api/sys/role';
 import { clone, concat, unique } from 'remeda';
+import { getDepartmentList } from '/@/api/sys/department';
 
 const { t } = useI18n();
 
@@ -71,6 +72,9 @@ export const columns: BasicColumn[] = [
   },
 ];
 
+const showCustomDeptListState = ref(false);
+const showCustomDeptList = computed(() => showCustomDeptListState.value);
+
 export const formSchema: FormSchema[] = [
   {
     field: 'id',
@@ -105,6 +109,46 @@ export const formSchema: FormSchema[] = [
     required: true,
     component: 'Input',
     rules: [{ max: 80 }],
+  },
+  {
+    field: 'dataScope',
+    label: t('sys.role.dataScope'),
+    component: 'Select',
+    componentProps: {
+      options: [
+        { label: t('sys.role.dataPermAll'), value: 1 },
+        { label: t('sys.role.dataPermCustomDept'), value: 2 },
+        { label: t('sys.role.dataPermOwnDeptAndSub'), value: 3 },
+        { label: t('sys.role.dataPermOwnDept'), value: 4 },
+        { label: t('sys.role.dataPermSelf'), value: 5 },
+      ],
+      defaultValue: 1,
+      onChange: (e) => {
+        if (e === 2) {
+          showCustomDeptListState.value = true;
+        } else {
+          showCustomDeptListState.value = false;
+        }
+      },
+    },
+  },
+  {
+    field: 'customDeptIds',
+    label: t('sys.role.customDept'),
+    required: true,
+    component: 'ApiTreeSelect',
+    componentProps: {
+      api: getDepartmentList,
+      params: {
+        page: 1,
+        pageSize: 100,
+      },
+      resultField: 'data.data',
+      labelField: 'trans',
+      valueField: 'id',
+      multiple: true,
+    },
+    ifShow: showCustomDeptList as any,
   },
   {
     field: 'status',

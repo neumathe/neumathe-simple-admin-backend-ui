@@ -167,6 +167,12 @@ export default {
     stuff: 'Stuff',
     seller: 'Seller',
     member: 'Member',
+    dataPermAll: 'All data',
+    dataPermCustomDept: 'Customized department data',
+    dataPermOwnDeptAndSub: "User's department and sub-department data",
+    dataPermOwnDept: "User's department data",
+    dataPermSelf: "User's own data",
+    customDept: 'Customized department',
     // action
     addRole: 'Add Role',
     editRole: 'Edit Role',
