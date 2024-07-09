@@ -148,6 +148,7 @@ export const formSchema: FormSchema[] = [
       labelField: 'trans',
       valueField: 'id',
       multiple: true,
+      showCheckedStrategy: 'SHOW_ALL',
     },
     ifShow: showCustomDeptList as any,
   },
