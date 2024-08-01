@@ -13,4 +13,5 @@ export default {
   otherPages: 'Other Pages',
   positionManagement: 'Position',
   taskManagement: 'Scheduled Task',
+  bannerManagement: "Banner Management"
 };

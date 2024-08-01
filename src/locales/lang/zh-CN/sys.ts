@@ -351,4 +351,14 @@ export default {
     editConfiguration: '编辑参数配置',
     configurationList: '参数配置列表',
   },
+  sysBanner: {
+    status: '是否启用',
+    showAt: '展示位置',
+    url: 'Url',
+    addSysBanner: '添加 Banner',
+    editSysBanner: '编辑 Banner',
+    sysBannerList: 'Banner 列表',
+    web: '网页',
+    miniprogram: '小程序',
+  }
 };

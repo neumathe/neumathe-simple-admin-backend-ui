@@ -13,4 +13,5 @@ export default {
   otherPages: '其他页面',
   positionManagement: '职位管理',
   taskManagement: '定时任务管理',
+  bannerManagement: 'banner管理',
 };

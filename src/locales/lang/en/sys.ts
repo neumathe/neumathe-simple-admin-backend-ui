@@ -346,4 +346,14 @@ export default {
     editConfiguration: 'Edit Configuration',
     configurationList: 'Configuration List',
   },
+  sysBanner: {
+    status: 'Is Show',
+    showAt: 'ShowAt 1: web 2:miniprogram',
+    url: 'Url',
+    addSysBanner: 'Add SysBanner',
+    editSysBanner: 'Edit SysBanner',
+    sysBannerList: 'SysBanner List',
+    web: 'web',
+    miniprogram: 'miniprogram',
+  }
 };
